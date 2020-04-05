@@ -1,8 +1,11 @@
+// standard
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+// 3rdparty
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+// internal
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { NavComponent } from './nav/nav.component';
@@ -23,7 +26,8 @@ import { ErrorInterceptor, ErrorInterceptorProvider } from './_services/error.in
    imports: [
       HttpClientModule,
       BrowserModule,
-      FormsModule
+      FormsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       ErrorInterceptorProvider,
