@@ -3,19 +3,16 @@
   <a class="navbar-brand" href="#">Dating App</a>
 
   <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#"
-        >Matches <span class="sr-only">(current)</span></a
+    <li class="nav-item" routerLinkActive="active" >
+      <a class="nav-link" [routerLink]="['/members']"  >Matches <span class="sr-only">(current)</span></a
       >
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">List</a>
+    <li class="nav-item" routerLinkActive="active" >
+      <a class="nav-link" [routerLink]="['/list']" >List</a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-        >Messages</a>
-      
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/messages']"   tabindex="-1" aria-disabled="true">Messages</a>
   </ul>
   
   <div *ngIf="loggedIn()" class="dropdown" dropdown>

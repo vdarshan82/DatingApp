@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 // 3rdparty
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 // internal
@@ -13,6 +14,11 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptor, ErrorInterceptorProvider } from './_services/error.inteceptor';
+import { MemberListComponent } from './member-list/member-list.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { appRoutes } from './routes';
+
 
 
 @NgModule({
@@ -21,13 +27,17 @@ import { ErrorInterceptor, ErrorInterceptorProvider } from './_services/error.in
       ValueComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MemberListComponent,
+      ListsComponent,
+      MessagesComponent
    ],
    imports: [
       HttpClientModule,
       BrowserModule,
       FormsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       ErrorInterceptorProvider,
